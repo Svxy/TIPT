@@ -60,7 +60,7 @@ def show_about():
     about_window.configure(bg="#2B2B2B")
     about_window.resizable(False, False)
 
-    app_version_label = tk.Label(about_window, text="Version 1.0\nBe sure not to delete the assets folder.\nWould appreciate a taskbar pin!", bg="#2B2B2B", fg="white")
+    app_version_label = tk.Label(about_window, text="Version 1.1\nBe sure not to delete the assets folder.\nWould appreciate a taskbar pin!", bg="#2B2B2B", fg="white")
     app_version_label.pack(pady=10)
 
     app_creator_label = tk.Label(about_window, text="Created by TnyavnTo", bg="#2B2B2B", fg="white")
