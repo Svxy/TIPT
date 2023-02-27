@@ -4,6 +4,14 @@
 
 <br>
 
+<h1 align=center><a href='https://github.com/Svxy/TIPT/releases/download/v1.0/TIPT.zip'>Download Now!</a></h1>
+
+<br>
+
+<img src='./assets/TIPT_Preview.png' height='180px'>
+
+<br>
+
 <h3 align=center>Features:</h3>
 
 <br>
