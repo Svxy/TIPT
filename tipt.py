@@ -13,7 +13,7 @@ def track_ip():
         response = requests.get(url)
         data = response.json()
         result_label.config(text=f"IP Address: {data['ip']}\n"
-                                  f"Hostname: {data['hostname']}\n"
+                                  f"Postal Code: {data['postal']}\n"
                                   f"City: {data['city']}\n"
                                   f"Region: {data['region']}\n"
                                   f"Country: {data['country']}\n"
