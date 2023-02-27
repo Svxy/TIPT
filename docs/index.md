@@ -4,7 +4,7 @@
 
 <br>
 
-<h1 align=center><a href='https://github.com/Svxy/TIPT/releases/download/v1.0/TIPT.zip'>Download Now!</a></h1>
+<h1 align=center><a href='https://github.com/Svxy/TIPT/releases/download/v1.1/TIPTv1.1.zip'>Download Now!</a></h1>
 
 <br>
 
