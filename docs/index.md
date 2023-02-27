@@ -1,6 +1,3 @@
-title: TIPT - TnyavnTos IP Tracker
-description: TIPT can Track and Ping IP Addresses as well as check for VPN's or Proxies all in one compact and responsive UI.
-
 <h2 align=center>TIPT - TnyavnTos IP Tracker</h2>
 
 <p align=center>TIPT can Track and Ping IP Addresses as well as check for VPN's or Proxies all in one compact and responsive UI.</p>

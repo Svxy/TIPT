@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google" content="notranslate">
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="pinterest" content="nopin" description="Sorry, you can't save from our website!">
+    <link rel="icon" href="../assets/logo.png">
+    <link rel="icon" sizes="192x192" href="../assets/logo.png">
+    <link rel="apple-touch-icon" href="../assets/icon.ico>
+    <!--Facebook Shit-->
+    <meta property="og:url" content="https://tnyavnto.com/tipt">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TIPT - TnyavnTos IP Tracker">
+    <meta property="og:image" content="https://github.com/Svxy/TIPT/blob/main/assets/logo.png">
+    <meta property="og:image:alt" content="TIPT Icon/Logo">
+    <meta property="og:description" content="TIPT can Track and Ping IP Addresses as well as check for VPN's or Proxies all in one compact and responsive UI.">
+    <meta property="og:site_name" content="TIPT - TnyavnTos IP Tracker">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:author" content="TnyavnTo">
+    <!--End Facebook shit-->
+    <!--Twitter card-->
+    <meta name="twitter:dnt" content="on">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@tnyavnto">
+    <meta name="twitter:creator" content="@tnyavnto">
+    <meta name="twitter:url" content="https://tnyavnto.com/tipt">
+    <meta name="twitter:title" content="TIPT - TnyavnTos IP Tracker">
+    <meta name="twitter:description" content="TIPT can Track and Ping IP Addresses as well as check for VPN's or Proxies all in one compact and responsive UI.">
+    <meta name="twitter:image" content="https://github.com/Svxy/TIPT/blob/main/assets/logo.png">
+    <meta name="twitter:image:alt" content="TIPT Icon/Logo">
+    <title>TIPT - TnyavnTos IP Tracker</title>
+    <meta name="description" content="TIPT can Track and Ping IP Addresses as well as check for VPN's or Proxies all in one compact and responsive UI.">
+    <noscript>
+        Enable JavaSript for the best experience on this site.
+      </noscript>
+    <!--End Twitter card-->
+{% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% include head-custom.html %}
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <ul>
+            <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
+            {% if site.show_downloads %}
+              <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
+              <!--<li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>-->
+              <li class="title">DOWNLOAD</li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+        </div>
+
+        {{ content }}
+
+      </section>
+
+    </div>
+  </body>
+</html>
