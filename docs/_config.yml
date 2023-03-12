@@ -4,7 +4,7 @@ plugins:
 show_downloads: true
 google_analytics: G-FGJKN4HRMN
 github:
-  zip_url: https://github.com/Svxy/TIPT/releases/download/v1.1/TIPTv1.1.zip
+  zip_url: https://github.com/Svxy/TIPT/releases/download/v1.2/TIPTv1.2.zip
   another_url: another value
 
 # i got no idea what im doing with this theme bullshit lmao...

@@ -1,7 +1,15 @@
 import tkinter as tk
 from tkinter import messagebox
 import requests
+import json
+import pyperclip
 
+tracked_ips = []
+try:
+    with open('tracked_ips.json', 'r') as f:
+        tracked_ips = json.load(f)
+except FileNotFoundError:
+    pass
 
 def track_ip():
     ip = ip_entry.get()
@@ -21,6 +29,9 @@ def track_ip():
                                   f"Timezone: {data['timezone']}")
     except requests.exceptions.RequestException:
         messagebox.showerror("Error", "Unable to get IP information")
+    tracked_ips.append(ip)
+    with open('tracked_ips.json', 'w') as f:
+        json.dump(tracked_ips, f)
 
 
 def ping_ip():
@@ -51,6 +62,28 @@ def check_vpn():
     except requests.exceptions.RequestException:
         messagebox.showerror("Error", "Unable to check VPN")
 
+def open_ip_database():
+    ip_database_window = tk.Toplevel(window)
+    ip_database_window.title("IP Database")
+    ip_database_window.iconbitmap("./assets/icon.ico")
+    ip_database_window.geometry("300x275")
+    ip_database_window.configure(bg="#2B2B2B")
+    ip_database_window.resizable(False, False)
+
+    ip_listbox = tk.Listbox(ip_database_window, font=("Helvetica", 12), bg="#3B3B3B", fg="white", selectbackground="#4B4B4B", selectforeground="white")
+    ip_listbox.pack(pady=10)
+
+    for ip in tracked_ips:
+        ip_listbox.insert(tk.END, ip)
+
+    def copy_ip_to_clipboard():
+        if ip_listbox.curselection():
+            selected_ip = ip_listbox.get(ip_listbox.curselection())
+            pyperclip.copy(selected_ip)
+            messagebox.showinfo("IP Copied", f"{selected_ip} has been copied to the clipboard.")
+
+    copy_ip_button = tk.Button(ip_database_window, text="Copy IP", font=("Helvetica", 12), bg="#FF3333", fg="white", command=copy_ip_to_clipboard)
+    copy_ip_button.pack(pady=10)
 
 def show_about():
     about_window = tk.Toplevel(window)
@@ -60,7 +93,7 @@ def show_about():
     about_window.configure(bg="#2B2B2B")
     about_window.resizable(False, False)
 
-    app_version_label = tk.Label(about_window, text="Version 1.1\nBe sure not to delete the assets folder.\nWould appreciate a taskbar pin!", bg="#2B2B2B", fg="white")
+    app_version_label = tk.Label(about_window, text="Version 1.2\nBe sure not to delete the assets folder.\nWould appreciate a taskbar pin!", bg="#2B2B2B", fg="white")
     app_version_label.pack(pady=10)
 
     app_creator_label = tk.Label(about_window, text="Created by TnyavnTo", bg="#2B2B2B", fg="white")
@@ -79,13 +112,16 @@ def open_url(url):
 window = tk.Tk()
 window.title("TnyavnTos IP Tracker")
 window.iconbitmap("./assets/icon.ico")
-window.geometry("420x550")
+window.geometry("420x575")
 window.configure(bg="#2B2B2B")
 window.resizable(False, False)
 
 
-app_title_label = tk.Label(window, text="TIPT\nTnyavnTos IP Tracker", font=("Impact", 18), bg="#2B2B2B", fg="white")
+app_title_label = tk.Label(window, text="TIPT\nTnyavnTos IP Tracker", font=("Impact", 17), bg="#2B2B2B", fg="white")
 app_title_label.pack(pady=10)
+
+about_button = tk.Button(window, text="About", font=("Helvetica", 12), bg="#FF3333", fg="white", command=show_about)
+about_button.pack(pady=5)
 
 logo = tk.PhotoImage(file="./assets/logo.png")
 logo_label = tk.Label(window, image=logo, bg="#2B2B2B")
@@ -103,10 +139,10 @@ ping_button.pack(pady=5)
 vpn_button = tk.Button(window, text="Check VPN", font=("Helvetica", 12), bg="#FF3333", fg="white", command=check_vpn)
 vpn_button.pack(pady=5)
 
+ip_database_button = tk.Button(window, text="IP Database", font=("Helvetica", 12), bg="#FF3333", fg="white", command=open_ip_database)
+ip_database_button.pack(pady=5)
+
 result_label = tk.Label(window, font=("Helvetica", 12), bg="#2B2B2B", fg="white")
 result_label.pack(pady=10)
-
-about_button = tk.Button(window, text="About", font=("Helvetica", 12), bg="#FF3333", fg="white", command=show_about)
-about_button.pack(pady=80)
 
 window.mainloop()

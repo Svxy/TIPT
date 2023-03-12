@@ -4,7 +4,7 @@
 
 <br>
 
-<h1 align=center><a href='https://github.com/Svxy/TIPT/releases/download/v1.1/TIPTv1.1.zip'>Download Now!</a></h1>
+<h1 align=center><a href='https://github.com/Svxy/TIPT/releases/download/v1.2/TIPTv1.2.zip'>Download Now!</a></h1>
 
 <br>
 
@@ -24,7 +24,7 @@
 
 <br>
 
-<h3 align=center>Installation/Compilation:</h3>
+<h3 align=center>Source Code<br>Installation/Compilation:</h3>
 
 <br>
 
