@@ -8,7 +8,7 @@
 
 <br>
 
-<img src='./assets/TIPT_Preview.png' height='180px'>
+<img src='./docs/assets/TIPT_Preview.png' height='180px'>
 
 <br>
 
