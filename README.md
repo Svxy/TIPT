@@ -22,6 +22,8 @@
 
 <p align=center><sup>VPN/Proxy checking using <a href='https://ipinfo.io' target='_blank'>ipinfo.io</a> json data</sup></p>
 
+<p align=center><sup>Local json database to store previously tracked IP's</sup></p>
+
 <br>
 
 <h3 align=center>Source Code<br>Installation/Compilation:</h3>
